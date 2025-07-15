@@ -1,38 +1,101 @@
+/* src/App.css */
+
 .App {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Estilos para las secciones generales */
+.section {
+  padding: 80px 20px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 100vh; /* Cada sección ocupa al menos la altura de la ventana */
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
+  position: relative; /* Para elementos posicionados dentro */
+  overflow: hidden; /* Para contener elementos que puedan desbordar */
+}
+
+.section:nth-child(even) {
+  background-color: var(--light-gray);
+}
+
+/* Títulos de sección */
+.section h1,
+.section h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.section p {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  font-size: 1.1em;
+}
+
+/* Botones generales */
+button {
+  background-color: var(--primary-color);
   color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3; /* Un tono más oscuro de primary-color */
+  transform: translateY(-3px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Animaciones al hacer scroll */
+/* .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+} */
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .section h1,
+  .section h2 {
+    font-size: 2.2em;
+  }
+
+  .section p {
+    font-size: 1em;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 10px;
+  }
+
+  .section h1,
+  .section h2 {
+    font-size: 1.8em;
   }
 }

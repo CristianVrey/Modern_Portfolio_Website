@@ -1,0 +1,59 @@
+/* src/Global.css */
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --light-gray: #e9ecef;
+}
+
+/* Tema Oscuro */
+[data-theme='dark'] {
+    --primary-color: #66b3ff; /* Un azul más claro para el modo oscuro */
+    --secondary-color: #adb5bd;
+    --text-color: #f8f9fa;
+    --background-color: #212529;
+    --light-gray: #343a40;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de tema */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 100vh; /* Para que cada sección ocupe al menos la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Incluye padding en el cálculo del tamaño */
+    position: relative; /* Para elementos posicionados dentro */
+    overflow: hidden; /* Para contener elementos que puedan desbordar */
+}
+
+.section:nth-child(even) {
+    background-color: var(--light-gray);
+}
+
+/* Estilos para el contenedor principal de la app */
+.App {
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
